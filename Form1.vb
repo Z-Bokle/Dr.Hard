@@ -1,4 +1,6 @@
 ﻿
+Imports System.ComponentModel
+
 Public Class MainForm
 
     Public reload_time As Single
@@ -24,6 +26,7 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.ShowInTaskbar = True
 
 
         OSVersion = My.Computer.Info.OSVersion
@@ -75,6 +78,8 @@ Public Class MainForm
 
         'Show user values
 
+        NotifyIcon.Text = "CPU" & Space(2) & Math.Round(CPU_Used) & "%" & vbCr & "Memory" & Space(2) & Math.Round(Mem_used) & "%"
+
 
 
 
@@ -92,4 +97,34 @@ Public Class MainForm
 
 
     End Sub
+
+
+
+    Private Sub MainForm_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+
+        If Me.WindowState = 1 Then
+
+
+            Me.ShowInTaskbar = False
+
+        Else
+            Me.ShowInTaskbar = True
+
+
+
+        End If
+
+
+
+
+    End Sub
+
+    Private Sub NotifyIcon_Click(sender As Object, e As EventArgs) Handles NotifyIcon.Click
+
+
+        Me.WindowState = 0
+
+
+    End Sub
+
 End Class

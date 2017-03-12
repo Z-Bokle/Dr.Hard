@@ -39,6 +39,7 @@ Partial Class MainForm
         Me.OnlyTimer = New System.Windows.Forms.Timer(Me.components)
         Me.CPUCounter = New System.Diagnostics.PerformanceCounter()
         Me.ComputerInfo = New System.Windows.Forms.TextBox()
+        Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.ReloadTimeSetter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CPUCounter, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -180,6 +181,11 @@ Partial Class MainForm
         Me.ComputerInfo.Size = New System.Drawing.Size(234, 185)
         Me.ComputerInfo.TabIndex = 9
         '
+        'NotifyIcon
+        '
+        Me.NotifyIcon.Icon = CType(resources.GetObject("NotifyIcon.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon.Visible = True
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -227,4 +233,5 @@ Partial Class MainForm
     Friend WithEvents CPUCounter As PerformanceCounter
     Friend WithEvents AlwaysOnTop As CheckBox
     Friend WithEvents ComputerInfo As TextBox
+    Friend WithEvents NotifyIcon As NotifyIcon
 End Class
