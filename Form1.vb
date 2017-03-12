@@ -2,6 +2,8 @@
 Imports System.ComponentModel
 
 Public Class MainForm
+    Public Version As String = "1.0.2"
+
 
     Public reload_time As Single
     Public CPU_Used As Single
@@ -119,7 +121,7 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub NotifyIcon_Click(sender As Object, e As EventArgs) Handles NotifyIcon.Click
+    Private Sub NotifyIcon_Click(sender As Object, e As EventArgs) Handles NotifyIcon.MouseDoubleClick
 
 
         Me.WindowState = 0
@@ -127,4 +129,36 @@ Public Class MainForm
 
     End Sub
 
+
+    Private Sub Menu_Open_Click(sender As Object, e As EventArgs) Handles Menu_Open.Click
+
+        Me.WindowState = 0
+
+
+    End Sub
+
+    Private Sub Menu_Close_Click(sender As Object, e As EventArgs) Handles Menu_Close.Click
+
+        Me.Close()
+
+    End Sub
+
+
+    Private Sub Menu_About_Click(sender As Object, e As EventArgs) Handles Menu_About.Click
+        MsgBox("Dr.Hard" & vbCr & "Version" & Space(5) & Version & vbCr & vbCr & vbCr & "Thanks List" & vbCr & vbCr & "Bokle", vbOKOnly, "About...")
+
+
+    End Sub
+
+    Private Sub Menu_Homepage_Click(sender As Object, e As EventArgs) Handles Menu_Homepage.Click
+
+        System.Diagnostics.Process.Start("https://github.com/Z-Bokle/Dr.Hard")
+
+    End Sub
+
+    Private Sub Menu_CheckForUpdate_Click(sender As Object, e As EventArgs) Handles Menu_CheckForUpdate.Click
+
+        System.Diagnostics.Process.Start("https://github.com/Z-Bokle/Dr.Hard/releases")
+
+    End Sub
 End Class

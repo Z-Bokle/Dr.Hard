@@ -2,6 +2,11 @@
 
 
 
+## 1.0.2
+
+- Added 2 Menu on form and taskbar icon.
+- Fixed 1 bug.
+
 ## 1.0.1
 
 - Now you can hide the form if you screen is in a mess.

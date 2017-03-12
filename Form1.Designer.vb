@@ -40,15 +40,26 @@ Partial Class MainForm
         Me.CPUCounter = New System.Diagnostics.PerformanceCounter()
         Me.ComputerInfo = New System.Windows.Forms.TextBox()
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.TaskbarMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Menu_Open = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Close = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FormMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Menu_About = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Websites = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_CheckForUpdate = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Homepage = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ReloadTimeSetter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CPUCounter, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TaskbarMenu.SuspendLayout()
+        Me.FormMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'CPU_ProgressBar
         '
         Me.CPU_ProgressBar.Location = New System.Drawing.Point(157, 42)
         Me.CPU_ProgressBar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.CPU_ProgressBar.MarqueeAnimationSpeed = 1
         Me.CPU_ProgressBar.Name = "CPU_ProgressBar"
         Me.CPU_ProgressBar.Size = New System.Drawing.Size(463, 33)
         Me.CPU_ProgressBar.TabIndex = 0
@@ -183,14 +194,65 @@ Partial Class MainForm
         '
         'NotifyIcon
         '
+        Me.NotifyIcon.ContextMenuStrip = Me.TaskbarMenu
         Me.NotifyIcon.Icon = CType(resources.GetObject("NotifyIcon.Icon"), System.Drawing.Icon)
         Me.NotifyIcon.Visible = True
+        '
+        'TaskbarMenu
+        '
+        Me.TaskbarMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Open, Me.Menu_Close})
+        Me.TaskbarMenu.Name = "TaskbarMenu"
+        Me.TaskbarMenu.Size = New System.Drawing.Size(109, 48)
+        '
+        'Menu_Open
+        '
+        Me.Menu_Open.Name = "Menu_Open"
+        Me.Menu_Open.Size = New System.Drawing.Size(108, 22)
+        Me.Menu_Open.Text = "Open"
+        '
+        'Menu_Close
+        '
+        Me.Menu_Close.Name = "Menu_Close"
+        Me.Menu_Close.Size = New System.Drawing.Size(108, 22)
+        Me.Menu_Close.Text = "Close"
+        '
+        'FormMenu
+        '
+        Me.FormMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Websites, Me.Menu_About})
+        Me.FormMenu.Name = "FormMenu"
+        Me.FormMenu.Size = New System.Drawing.Size(153, 70)
+        '
+        'Menu_About
+        '
+        Me.Menu_About.Name = "Menu_About"
+        Me.Menu_About.Size = New System.Drawing.Size(152, 22)
+        Me.Menu_About.Text = "About..."
+        '
+        'Menu_Websites
+        '
+        Me.Menu_Websites.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Homepage, Me.Menu_CheckForUpdate})
+        Me.Menu_Websites.Name = "Menu_Websites"
+        Me.Menu_Websites.Size = New System.Drawing.Size(152, 22)
+        Me.Menu_Websites.Text = "Websites"
+        '
+        'Menu_CheckForUpdate
+        '
+        Me.Menu_CheckForUpdate.Name = "Menu_CheckForUpdate"
+        Me.Menu_CheckForUpdate.Size = New System.Drawing.Size(234, 22)
+        Me.Menu_CheckForUpdate.Text = "Check For Update By Hand"
+        '
+        'Menu_Homepage
+        '
+        Me.Menu_Homepage.Name = "Menu_Homepage"
+        Me.Menu_Homepage.Size = New System.Drawing.Size(234, 22)
+        Me.Menu_Homepage.Text = "Our Website"
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(646, 538)
+        Me.ContextMenuStrip = Me.FormMenu
         Me.Controls.Add(Me.ComputerInfo)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
@@ -213,6 +275,8 @@ Partial Class MainForm
         Me.GroupBox1.PerformLayout()
         CType(Me.ReloadTimeSetter, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CPUCounter, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TaskbarMenu.ResumeLayout(False)
+        Me.FormMenu.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -234,4 +298,12 @@ Partial Class MainForm
     Friend WithEvents AlwaysOnTop As CheckBox
     Friend WithEvents ComputerInfo As TextBox
     Friend WithEvents NotifyIcon As NotifyIcon
+    Friend WithEvents TaskbarMenu As ContextMenuStrip
+    Friend WithEvents Menu_Open As ToolStripMenuItem
+    Friend WithEvents Menu_Close As ToolStripMenuItem
+    Friend WithEvents FormMenu As ContextMenuStrip
+    Friend WithEvents Menu_About As ToolStripMenuItem
+    Friend WithEvents Menu_Websites As ToolStripMenuItem
+    Friend WithEvents Menu_Homepage As ToolStripMenuItem
+    Friend WithEvents Menu_CheckForUpdate As ToolStripMenuItem
 End Class
