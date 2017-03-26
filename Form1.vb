@@ -77,6 +77,9 @@ Public Class MainForm
 
         CPU_ProgressBar.Value = CPU_Used
         Mem_ProgressBar.Value = Mem_used
+        CPU_Used_Label.Text = Math.Round(CPU_Used) & "%"
+        Mem_Uesd_Label.Text = Math.Round(Mem_used) & "%"
+
 
         'Show user values
 

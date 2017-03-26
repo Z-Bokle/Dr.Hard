@@ -2,6 +2,15 @@
 
 
 
+## 1.0.3
+
+- Form size turned smaller.
+- The max and min value of reload time turned small.
+- Icon and LOGO changed.
+- The word of the information of computer turned a little larger.
+- The process bar turned shorter.
+- The percent of CPU and Memory are shown at the right of process bars.
+
 ## 1.0.2
 
 - Added 2 Menu on form and taskbar icon.

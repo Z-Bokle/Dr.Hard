@@ -44,10 +44,12 @@ Partial Class MainForm
         Me.Menu_Open = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Close = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.Menu_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Websites = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Menu_CheckForUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Homepage = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_CheckForUpdate = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_About = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CPU_Used_Label = New System.Windows.Forms.Label()
+        Me.Mem_Uesd_Label = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ReloadTimeSetter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CPUCounter, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,19 +59,19 @@ Partial Class MainForm
         '
         'CPU_ProgressBar
         '
-        Me.CPU_ProgressBar.Location = New System.Drawing.Point(157, 42)
+        Me.CPU_ProgressBar.Location = New System.Drawing.Point(157, 49)
         Me.CPU_ProgressBar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CPU_ProgressBar.MarqueeAnimationSpeed = 1
         Me.CPU_ProgressBar.Name = "CPU_ProgressBar"
-        Me.CPU_ProgressBar.Size = New System.Drawing.Size(463, 33)
+        Me.CPU_ProgressBar.Size = New System.Drawing.Size(373, 33)
         Me.CPU_ProgressBar.TabIndex = 0
         '
         'Mem_ProgressBar
         '
-        Me.Mem_ProgressBar.Location = New System.Drawing.Point(157, 180)
+        Me.Mem_ProgressBar.Location = New System.Drawing.Point(157, 187)
         Me.Mem_ProgressBar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Mem_ProgressBar.Name = "Mem_ProgressBar"
-        Me.Mem_ProgressBar.Size = New System.Drawing.Size(463, 33)
+        Me.Mem_ProgressBar.Size = New System.Drawing.Size(373, 33)
         Me.Mem_ProgressBar.TabIndex = 1
         '
         'Label2
@@ -84,7 +86,7 @@ Partial Class MainForm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(591, 88)
+        Me.Label3.Location = New System.Drawing.Point(501, 88)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(29, 17)
         Me.Label3.TabIndex = 3
@@ -102,7 +104,7 @@ Partial Class MainForm
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(591, 237)
+        Me.Label6.Location = New System.Drawing.Point(501, 237)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(29, 17)
         Me.Label6.TabIndex = 5
@@ -115,7 +117,7 @@ Partial Class MainForm
         Me.GroupBox1.Controls.Add(Me.ReloadTimeSetter)
         Me.GroupBox1.Location = New System.Drawing.Point(341, 301)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(279, 185)
+        Me.GroupBox1.Size = New System.Drawing.Size(242, 185)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Settings"
@@ -141,15 +143,15 @@ Partial Class MainForm
         '
         'ReloadTimeSetter
         '
-        Me.ReloadTimeSetter.DecimalPlaces = 1
-        Me.ReloadTimeSetter.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.ReloadTimeSetter.Location = New System.Drawing.Point(202, 44)
-        Me.ReloadTimeSetter.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.ReloadTimeSetter.Minimum = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.ReloadTimeSetter.DecimalPlaces = 2
+        Me.ReloadTimeSetter.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.ReloadTimeSetter.Location = New System.Drawing.Point(183, 44)
+        Me.ReloadTimeSetter.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.ReloadTimeSetter.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.ReloadTimeSetter.Name = "ReloadTimeSetter"
-        Me.ReloadTimeSetter.Size = New System.Drawing.Size(47, 23)
+        Me.ReloadTimeSetter.Size = New System.Drawing.Size(44, 23)
         Me.ReloadTimeSetter.TabIndex = 0
-        Me.ReloadTimeSetter.Value = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.ReloadTimeSetter.Value = New Decimal(New Integer() {1, 0, 0, 65536})
         '
         'Label1
         '
@@ -184,6 +186,7 @@ Partial Class MainForm
         '
         Me.ComputerInfo.AcceptsTab = True
         Me.ComputerInfo.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ComputerInfo.Font = New System.Drawing.Font("微软雅黑", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ComputerInfo.Location = New System.Drawing.Point(54, 301)
         Me.ComputerInfo.Multiline = True
         Me.ComputerInfo.Name = "ComputerInfo"
@@ -220,26 +223,14 @@ Partial Class MainForm
         '
         Me.FormMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Websites, Me.Menu_About})
         Me.FormMenu.Name = "FormMenu"
-        Me.FormMenu.Size = New System.Drawing.Size(153, 70)
-        '
-        'Menu_About
-        '
-        Me.Menu_About.Name = "Menu_About"
-        Me.Menu_About.Size = New System.Drawing.Size(152, 22)
-        Me.Menu_About.Text = "About..."
+        Me.FormMenu.Size = New System.Drawing.Size(130, 48)
         '
         'Menu_Websites
         '
         Me.Menu_Websites.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Homepage, Me.Menu_CheckForUpdate})
         Me.Menu_Websites.Name = "Menu_Websites"
-        Me.Menu_Websites.Size = New System.Drawing.Size(152, 22)
+        Me.Menu_Websites.Size = New System.Drawing.Size(129, 22)
         Me.Menu_Websites.Text = "Websites"
-        '
-        'Menu_CheckForUpdate
-        '
-        Me.Menu_CheckForUpdate.Name = "Menu_CheckForUpdate"
-        Me.Menu_CheckForUpdate.Size = New System.Drawing.Size(234, 22)
-        Me.Menu_CheckForUpdate.Text = "Check For Update By Hand"
         '
         'Menu_Homepage
         '
@@ -247,12 +238,46 @@ Partial Class MainForm
         Me.Menu_Homepage.Size = New System.Drawing.Size(234, 22)
         Me.Menu_Homepage.Text = "Our Website"
         '
+        'Menu_CheckForUpdate
+        '
+        Me.Menu_CheckForUpdate.Name = "Menu_CheckForUpdate"
+        Me.Menu_CheckForUpdate.Size = New System.Drawing.Size(234, 22)
+        Me.Menu_CheckForUpdate.Text = "Check For Update By Hand"
+        '
+        'Menu_About
+        '
+        Me.Menu_About.Name = "Menu_About"
+        Me.Menu_About.Size = New System.Drawing.Size(129, 22)
+        Me.Menu_About.Text = "About..."
+        '
+        'CPU_Used_Label
+        '
+        Me.CPU_Used_Label.AutoSize = True
+        Me.CPU_Used_Label.Font = New System.Drawing.Font("微软雅黑", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.CPU_Used_Label.Location = New System.Drawing.Point(547, 56)
+        Me.CPU_Used_Label.Name = "CPU_Used_Label"
+        Me.CPU_Used_Label.Size = New System.Drawing.Size(111, 27)
+        Me.CPU_Used_Label.TabIndex = 10
+        Me.CPU_Used_Label.Text = "CPU Used"
+        '
+        'Mem_Uesd_Label
+        '
+        Me.Mem_Uesd_Label.AutoSize = True
+        Me.Mem_Uesd_Label.Font = New System.Drawing.Font("微软雅黑", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Mem_Uesd_Label.Location = New System.Drawing.Point(547, 194)
+        Me.Mem_Uesd_Label.Name = "Mem_Uesd_Label"
+        Me.Mem_Uesd_Label.Size = New System.Drawing.Size(122, 27)
+        Me.Mem_Uesd_Label.TabIndex = 11
+        Me.Mem_Uesd_Label.Text = "Mem Used"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(646, 538)
+        Me.ClientSize = New System.Drawing.Size(678, 513)
         Me.ContextMenuStrip = Me.FormMenu
+        Me.Controls.Add(Me.Mem_Uesd_Label)
+        Me.Controls.Add(Me.CPU_Used_Label)
         Me.Controls.Add(Me.ComputerInfo)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
@@ -306,4 +331,6 @@ Partial Class MainForm
     Friend WithEvents Menu_Websites As ToolStripMenuItem
     Friend WithEvents Menu_Homepage As ToolStripMenuItem
     Friend WithEvents Menu_CheckForUpdate As ToolStripMenuItem
+    Friend WithEvents CPU_Used_Label As Label
+    Friend WithEvents Mem_Uesd_Label As Label
 End Class
