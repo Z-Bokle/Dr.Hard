@@ -2,6 +2,13 @@
 
 
 
+## 1.0.4
+
+- We have a new form called "Computer Info" instead of textbox.
+- About box update.But it can't be seen in GUI.
+- About menu is added in taskbar menu list.
+- *.exe file will include Dr.Hard version.
+
 ## 1.0.3
 
 - Form size turned smaller.

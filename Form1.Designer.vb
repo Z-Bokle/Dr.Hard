@@ -31,6 +31,7 @@ Partial Class MainForm
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Computer_Info_Button = New System.Windows.Forms.Button()
         Me.AlwaysOnTop = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ReloadTimeSetter = New System.Windows.Forms.NumericUpDown()
@@ -38,11 +39,10 @@ Partial Class MainForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.OnlyTimer = New System.Windows.Forms.Timer(Me.components)
         Me.CPUCounter = New System.Diagnostics.PerformanceCounter()
-        Me.ComputerInfo = New System.Windows.Forms.TextBox()
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.TaskbarMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Menu_Open = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Menu_Close = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Exit = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Menu_Websites = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Homepage = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,6 +50,7 @@ Partial Class MainForm
         Me.Menu_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.CPU_Used_Label = New System.Windows.Forms.Label()
         Me.Mem_Uesd_Label = New System.Windows.Forms.Label()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ReloadTimeSetter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CPUCounter, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,15 +113,25 @@ Partial Class MainForm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Computer_Info_Button)
         Me.GroupBox1.Controls.Add(Me.AlwaysOnTop)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.ReloadTimeSetter)
-        Me.GroupBox1.Location = New System.Drawing.Point(341, 301)
+        Me.GroupBox1.Location = New System.Drawing.Point(157, 298)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(242, 185)
+        Me.GroupBox1.Size = New System.Drawing.Size(267, 185)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Settings"
+        '
+        'Computer_Info_Button
+        '
+        Me.Computer_Info_Button.Location = New System.Drawing.Point(20, 123)
+        Me.Computer_Info_Button.Name = "Computer_Info_Button"
+        Me.Computer_Info_Button.Size = New System.Drawing.Size(122, 40)
+        Me.Computer_Info_Button.TabIndex = 3
+        Me.Computer_Info_Button.Text = "Computer Info"
+        Me.Computer_Info_Button.UseVisualStyleBackColor = True
         '
         'AlwaysOnTop
         '
@@ -182,19 +193,6 @@ Partial Class MainForm
         Me.CPUCounter.CounterName = "% Processor Time"
         Me.CPUCounter.InstanceName = "_Total"
         '
-        'ComputerInfo
-        '
-        Me.ComputerInfo.AcceptsTab = True
-        Me.ComputerInfo.Cursor = System.Windows.Forms.Cursors.Default
-        Me.ComputerInfo.Font = New System.Drawing.Font("微软雅黑", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.ComputerInfo.Location = New System.Drawing.Point(54, 301)
-        Me.ComputerInfo.Multiline = True
-        Me.ComputerInfo.Name = "ComputerInfo"
-        Me.ComputerInfo.ReadOnly = True
-        Me.ComputerInfo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.ComputerInfo.Size = New System.Drawing.Size(234, 185)
-        Me.ComputerInfo.TabIndex = 9
-        '
         'NotifyIcon
         '
         Me.NotifyIcon.ContextMenuStrip = Me.TaskbarMenu
@@ -203,21 +201,21 @@ Partial Class MainForm
         '
         'TaskbarMenu
         '
-        Me.TaskbarMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Open, Me.Menu_Close})
+        Me.TaskbarMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Open, Me.Menu_Exit, Me.AboutToolStripMenuItem})
         Me.TaskbarMenu.Name = "TaskbarMenu"
-        Me.TaskbarMenu.Size = New System.Drawing.Size(109, 48)
+        Me.TaskbarMenu.Size = New System.Drawing.Size(153, 92)
         '
         'Menu_Open
         '
         Me.Menu_Open.Name = "Menu_Open"
-        Me.Menu_Open.Size = New System.Drawing.Size(108, 22)
+        Me.Menu_Open.Size = New System.Drawing.Size(152, 22)
         Me.Menu_Open.Text = "Open"
         '
-        'Menu_Close
+        'Menu_Exit
         '
-        Me.Menu_Close.Name = "Menu_Close"
-        Me.Menu_Close.Size = New System.Drawing.Size(108, 22)
-        Me.Menu_Close.Text = "Close"
+        Me.Menu_Exit.Name = "Menu_Exit"
+        Me.Menu_Exit.Size = New System.Drawing.Size(152, 22)
+        Me.Menu_Exit.Text = "Exit"
         '
         'FormMenu
         '
@@ -270,6 +268,12 @@ Partial Class MainForm
         Me.Mem_Uesd_Label.TabIndex = 11
         Me.Mem_Uesd_Label.Text = "Mem Used"
         '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Text = "About..."
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -278,7 +282,6 @@ Partial Class MainForm
         Me.ContextMenuStrip = Me.FormMenu
         Me.Controls.Add(Me.Mem_Uesd_Label)
         Me.Controls.Add(Me.CPU_Used_Label)
-        Me.Controls.Add(Me.ComputerInfo)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
@@ -321,11 +324,10 @@ Partial Class MainForm
     Friend WithEvents OnlyTimer As Timer
     Friend WithEvents CPUCounter As PerformanceCounter
     Friend WithEvents AlwaysOnTop As CheckBox
-    Friend WithEvents ComputerInfo As TextBox
     Friend WithEvents NotifyIcon As NotifyIcon
     Friend WithEvents TaskbarMenu As ContextMenuStrip
     Friend WithEvents Menu_Open As ToolStripMenuItem
-    Friend WithEvents Menu_Close As ToolStripMenuItem
+    Friend WithEvents Menu_Exit As ToolStripMenuItem
     Friend WithEvents FormMenu As ContextMenuStrip
     Friend WithEvents Menu_About As ToolStripMenuItem
     Friend WithEvents Menu_Websites As ToolStripMenuItem
@@ -333,4 +335,6 @@ Partial Class MainForm
     Friend WithEvents Menu_CheckForUpdate As ToolStripMenuItem
     Friend WithEvents CPU_Used_Label As Label
     Friend WithEvents Mem_Uesd_Label As Label
+    Friend WithEvents Computer_Info_Button As Button
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
 End Class

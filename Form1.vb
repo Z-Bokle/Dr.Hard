@@ -2,7 +2,7 @@
 Imports System.ComponentModel
 
 Public Class MainForm
-    Public Version As String = "1.0.2"
+
 
 
     Public reload_time As Single
@@ -35,12 +35,13 @@ Public Class MainForm
         OSPlatform = My.Computer.Info.OSPlatform
         OSFullName = My.Computer.Info.OSFullName
         'get computer's infomation
-        ComputerInfo.Text = "OSVersion" & Space(5) & OSVersion & vbCrLf & vbCrLf & "OSFullName" & Space(5) & OSFullName & vbCrLf & vbCrLf & "OSPlatform" & Space(5) & OSPlatform & vbCrLf & vbCrLf
+
+        ComputerInfo_Form.ComputerInfo.Text = "OSVersion" & Space(5) & OSVersion & vbCrLf & vbCrLf & "OSFullName" & Space(5) & OSFullName & vbCrLf & vbCrLf & "OSPlatform" & Space(5) & OSPlatform & vbCrLf & vbCrLf
         'Platform Info Show
 
 
         memsize = My.Computer.Info.TotalPhysicalMemory
-        ComputerInfo.Text = ComputerInfo.Text & "Total Memory" & Space(5) & Math.Round(memsize / 1024 / 1024 / 1024) & "GB" & vbCrLf & vbCrLf
+        ComputerInfo_Form.ComputerInfo.Text = ComputerInfo_Form.ComputerInfo.Text & "Total Memory" & Space(5) & Math.Round(memsize / 1024 / 1024 / 1024) & "GB" & vbCrLf & vbCrLf
         'Memory Info Show
 
 
@@ -140,7 +141,7 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub Menu_Close_Click(sender As Object, e As EventArgs) Handles Menu_Close.Click
+    Private Sub Menu_Close_Click(sender As Object, e As EventArgs) Handles Menu_Exit.Click
 
         Me.Close()
 
@@ -148,7 +149,8 @@ Public Class MainForm
 
 
     Private Sub Menu_About_Click(sender As Object, e As EventArgs) Handles Menu_About.Click
-        MsgBox("Dr.Hard" & vbCr & "Version" & Space(5) & Version & vbCr & vbCr & vbCr & "Thanks List" & vbCr & vbCr & "Bokle", vbOKOnly, "About...")
+
+
 
 
     End Sub
@@ -162,6 +164,15 @@ Public Class MainForm
     Private Sub Menu_CheckForUpdate_Click(sender As Object, e As EventArgs) Handles Menu_CheckForUpdate.Click
 
         System.Diagnostics.Process.Start("https://github.com/Z-Bokle/Dr.Hard/releases")
+
+    End Sub
+
+    Private Sub Computer_Info_Button_Click(sender As Object, e As EventArgs) Handles Computer_Info_Button.Click
+        ComputerInfo_Form.Show()
+
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
 
     End Sub
 End Class
