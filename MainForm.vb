@@ -5,13 +5,13 @@ Public Class MainForm
 
 
 
-    Public reload_time As Single
-    Public CPU_Used As Single
-    Public Mem_used As Single
-    Public OSVersion As String
-    Public OSPlatform As String
-    Public OSFullName As String
-    Public memsize As Single
+    Public reload_time As Single    'values refresh time
+    Public CPU_Used As Single   'CPU usage
+    Public Mem_used As Single   'Memory usage
+    Public OSVersion As String  'Platform version
+    Public OSPlatform As String 'Platform name
+    Public OSFullName As String 'Platform fullname
+    Public memsize As Single    'Maximum memory
 
 
 
@@ -29,6 +29,7 @@ Public Class MainForm
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = True
+
 
 
         OSVersion = My.Computer.Info.OSVersion
@@ -150,6 +151,7 @@ Public Class MainForm
 
     Private Sub Menu_About_Click(sender As Object, e As EventArgs) Handles Menu_About.Click
 
+        AboutForm.Show()
 
 
 
@@ -172,7 +174,11 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+
+
+    Private Sub NetworkButton_Click(sender As Object, e As EventArgs) Handles NetworkButton.Click
+        NetworkForm.Show()
+
 
     End Sub
 End Class

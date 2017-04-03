@@ -3,6 +3,8 @@ A tool for hardwares.
 
 ![LOGO](https://github.com/Z-Bokle/Dr.Hard/blob/master/Dr.Hard.png)
 
+
+
 ##Get Start
 
 
@@ -15,7 +17,7 @@ You can download Dr.Hard and use it for free.
 
 
 ###I'm a developer.
-I'm sorry that it is so simple.If you are really interested in this project,you can download or clone codes.
+I'm sorry that it is so simple. If you are really interested in this project, you can download or clone codes.
 
 [Clone](https://github.com/Z-Bokle/Dr.Hard.git)
 
@@ -27,19 +29,25 @@ I'm sorry that it is so simple.If you are really interested in this project,you 
 
 Q:Can I use this software for free?
 
-A:Sure.If you think it is nice,we wish you tell your friends.
+A:Sure.If you think it is nice, we wish you tell your friends.
 
 
 
-Q:How can I update?
+Q:How can I update Dr.Hard on my computer?
 
-A:You can only update Dr.Hard from [there](https://github.com/Z-Bokle/Dr.Hard/releases).You needn't pay plenty of attention an it,because it only has one file.
+A:You can only update Dr.Hard from [there](https://github.com/Z-Bokle/Dr.Hard/releases). You needn't pay plenty of attention an it, because it only has one file.
 
 
 
 Q:Where is the main file within codes?
 
-A:Maybe at present,[this](https://github.com/Z-Bokle/Dr.Hard/blob/master/Form1.vb) is your answer.
+A:Maybe at present, [this](https://github.com/Z-Bokle/Dr.Hard/blob/master/Form1.vb) is your answer.
+
+
+
+Q:What is the use of Dr.Hard?
+
+A:It is a light tool for hardware monitoring, network checking and more.
 
 
 

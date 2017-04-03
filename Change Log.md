@@ -2,6 +2,11 @@
 
 
 
+## 1.0.5
+
+- About form can be opened but there's nothing.
+- "Network" function is added, you can ping some website now.
+
 ## 1.0.4
 
 - We have a new form called "Computer Info" instead of textbox.

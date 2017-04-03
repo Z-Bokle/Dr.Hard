@@ -31,6 +31,7 @@ Partial Class MainForm
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.NetworkButton = New System.Windows.Forms.Button()
         Me.Computer_Info_Button = New System.Windows.Forms.Button()
         Me.AlwaysOnTop = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -43,6 +44,7 @@ Partial Class MainForm
         Me.TaskbarMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Menu_Open = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Exit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Menu_Websites = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Homepage = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,7 +52,6 @@ Partial Class MainForm
         Me.Menu_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.CPU_Used_Label = New System.Windows.Forms.Label()
         Me.Mem_Uesd_Label = New System.Windows.Forms.Label()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ReloadTimeSetter, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CPUCounter, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,16 +114,26 @@ Partial Class MainForm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.NetworkButton)
         Me.GroupBox1.Controls.Add(Me.Computer_Info_Button)
         Me.GroupBox1.Controls.Add(Me.AlwaysOnTop)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.ReloadTimeSetter)
         Me.GroupBox1.Location = New System.Drawing.Point(157, 298)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(267, 185)
+        Me.GroupBox1.Size = New System.Drawing.Size(312, 185)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Settings"
+        '
+        'NetworkButton
+        '
+        Me.NetworkButton.Location = New System.Drawing.Point(169, 123)
+        Me.NetworkButton.Name = "NetworkButton"
+        Me.NetworkButton.Size = New System.Drawing.Size(122, 40)
+        Me.NetworkButton.TabIndex = 4
+        Me.NetworkButton.Text = "Network"
+        Me.NetworkButton.UseVisualStyleBackColor = True
         '
         'Computer_Info_Button
         '
@@ -203,19 +214,25 @@ Partial Class MainForm
         '
         Me.TaskbarMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Open, Me.Menu_Exit, Me.AboutToolStripMenuItem})
         Me.TaskbarMenu.Name = "TaskbarMenu"
-        Me.TaskbarMenu.Size = New System.Drawing.Size(153, 92)
+        Me.TaskbarMenu.Size = New System.Drawing.Size(121, 70)
         '
         'Menu_Open
         '
         Me.Menu_Open.Name = "Menu_Open"
-        Me.Menu_Open.Size = New System.Drawing.Size(152, 22)
+        Me.Menu_Open.Size = New System.Drawing.Size(120, 22)
         Me.Menu_Open.Text = "Open"
         '
         'Menu_Exit
         '
         Me.Menu_Exit.Name = "Menu_Exit"
-        Me.Menu_Exit.Size = New System.Drawing.Size(152, 22)
+        Me.Menu_Exit.Size = New System.Drawing.Size(120, 22)
         Me.Menu_Exit.Text = "Exit"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
+        Me.AboutToolStripMenuItem.Text = "About..."
         '
         'FormMenu
         '
@@ -267,12 +284,6 @@ Partial Class MainForm
         Me.Mem_Uesd_Label.Size = New System.Drawing.Size(122, 27)
         Me.Mem_Uesd_Label.TabIndex = 11
         Me.Mem_Uesd_Label.Text = "Mem Used"
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.AboutToolStripMenuItem.Text = "About..."
         '
         'MainForm
         '
@@ -337,4 +348,5 @@ Partial Class MainForm
     Friend WithEvents Mem_Uesd_Label As Label
     Friend WithEvents Computer_Info_Button As Button
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NetworkButton As Button
 End Class
