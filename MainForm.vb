@@ -1,5 +1,9 @@
-﻿
+﻿Imports System.IO.File
 Imports System.ComponentModel
+Imports System
+Imports System.IO
+Imports System.Collections
+
 
 Public Class MainForm
 
@@ -12,6 +16,7 @@ Public Class MainForm
     Public OSPlatform As String 'Platform name
     Public OSFullName As String 'Platform fullname
     Public memsize As Single    'Maximum memory
+
 
 
 
@@ -36,14 +41,9 @@ Public Class MainForm
         OSPlatform = My.Computer.Info.OSPlatform
         OSFullName = My.Computer.Info.OSFullName
         'get computer's infomation
-
-        ComputerInfo_Form.ComputerInfo.Text = "OSVersion" & Space(5) & OSVersion & vbCrLf & vbCrLf & "OSFullName" & Space(5) & OSFullName & vbCrLf & vbCrLf & "OSPlatform" & Space(5) & OSPlatform & vbCrLf & vbCrLf
-        'Platform Info Show
-
-
         memsize = My.Computer.Info.TotalPhysicalMemory
-        ComputerInfo_Form.ComputerInfo.Text = ComputerInfo_Form.ComputerInfo.Text & "Total Memory" & Space(5) & Math.Round(memsize / 1024 / 1024 / 1024) & "GB" & vbCrLf & vbCrLf
-        'Memory Info Show
+
+
 
 
 
@@ -57,6 +57,12 @@ Public Class MainForm
 
         OnlyTimer.Start()
 
+        If Exists(Application.StartupPath & "\Dr.Hard.log") = True Then
+            Kill(Application.StartupPath & "\Dr.Hard.log")
+        End If
+
+        Dim LogStream As New FileStream(Application.StartupPath & "\Dr.Hard.log", FileMode.Create)
+        LogStream.Close()
 
 
 
@@ -152,7 +158,7 @@ Public Class MainForm
     Private Sub Menu_About_Click(sender As Object, e As EventArgs) Handles Menu_About.Click
 
         AboutForm.Show()
-
+        AboutForm.Focus()
 
 
     End Sub
@@ -170,7 +176,16 @@ Public Class MainForm
     End Sub
 
     Private Sub Computer_Info_Button_Click(sender As Object, e As EventArgs) Handles Computer_Info_Button.Click
+        ComputerInfo_Form.ComputerInfo.Text = "OSVersion" & Space(5) & OSVersion & vbCrLf & vbCrLf & "OSFullName" & Space(5) & OSFullName & vbCrLf & vbCrLf & "OSPlatform" & Space(5) & OSPlatform & vbCrLf & vbCrLf
+        'Show Platform Info 
+
+
+        ComputerInfo_Form.ComputerInfo.Text = ComputerInfo_Form.ComputerInfo.Text & "Total Memory" & Space(5) & Math.Round(memsize / 1024 / 1024 / 1024) & "GB" & vbCrLf & vbCrLf
+        'Show Memory Info
+
         ComputerInfo_Form.Show()
+        ComputerInfo_Form.Focus()
+
 
     End Sub
 
@@ -178,6 +193,8 @@ Public Class MainForm
 
     Private Sub NetworkButton_Click(sender As Object, e As EventArgs) Handles NetworkButton.Click
         NetworkForm.Show()
+        NetworkForm.Focus()
+
 
 
     End Sub

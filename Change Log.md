@@ -2,6 +2,11 @@
 
 
 
+## 1.0.6 - pre 1 
+
+- 2 bugs fixed.
+- Log function is added, but it is still not complete.
+
 ## 1.0.5
 
 - About form can be opened but there's nothing.
