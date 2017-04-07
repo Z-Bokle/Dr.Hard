@@ -2,6 +2,12 @@
 
 
 
+## 1.0.6 - pre 2
+
+- A new form called "Settings" is added.
+- No border mode can be used.
+- UI changed.
+
 ## 1.0.6 - pre 1 
 
 - 2 bugs fixed.

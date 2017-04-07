@@ -5,6 +5,8 @@ Imports System.IO
 Imports System.Collections
 
 
+
+
 Public Class MainForm
 
 
@@ -17,6 +19,8 @@ Public Class MainForm
     Public OSFullName As String 'Platform fullname
     Public memsize As Single    'Maximum memory
 
+    Public Check_AlwaysOnTop_Pub As Boolean = False
+    Public Check_Border_Pub As Boolean = True
 
 
 
@@ -24,13 +28,6 @@ Public Class MainForm
 
 
 
-    Private Sub ReloadTimeSetter_ValueChanged(sender As Object, e As EventArgs) Handles ReloadTimeSetter.ValueChanged
-
-        reload_time = ReloadTimeSetter.Value
-        'Change reload time
-
-
-    End Sub
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = True
@@ -49,7 +46,7 @@ Public Class MainForm
 
 
 
-        reload_time = ReloadTimeSetter.Value
+        reload_time = Settings.ReloadTimeSetter.Value
         'set reload time
 
 
@@ -98,18 +95,7 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub AlwaysOnTop_CheckedChanged(sender As Object, e As EventArgs) Handles AlwaysOnTop.CheckedChanged
 
-        If AlwaysOnTop.Checked = True Then
-
-            Me.TopMost = True
-        Else
-            Me.TopMost = False
-
-        End If
-
-
-    End Sub
 
 
 
@@ -175,7 +161,17 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub Computer_Info_Button_Click(sender As Object, e As EventArgs) Handles Computer_Info_Button.Click
+
+
+    Private Sub Menu_Network_Click(sender As Object, e As EventArgs) Handles Menu_Network.Click
+
+        NetworkForm.Show()
+        NetworkForm.Focus()
+
+
+    End Sub
+
+    Private Sub Menu_ComputerInfo_Click(sender As Object, e As EventArgs) Handles Menu_ComputerInfo.Click
         ComputerInfo_Form.ComputerInfo.Text = "OSVersion" & Space(5) & OSVersion & vbCrLf & vbCrLf & "OSFullName" & Space(5) & OSFullName & vbCrLf & vbCrLf & "OSPlatform" & Space(5) & OSPlatform & vbCrLf & vbCrLf
         'Show Platform Info 
 
@@ -185,17 +181,19 @@ Public Class MainForm
 
         ComputerInfo_Form.Show()
         ComputerInfo_Form.Focus()
+    End Sub
 
+    Private Sub Menu_Settings_Click(sender As Object, e As EventArgs) Handles Menu_Settings.Click
+
+        Settings.Focus()
+        Settings.Show()
 
     End Sub
 
+    Private Sub Menu_Settings_2_Click(sender As Object, e As EventArgs) Handles Menu_Settings_2.Click
 
-
-    Private Sub NetworkButton_Click(sender As Object, e As EventArgs) Handles NetworkButton.Click
-        NetworkForm.Show()
-        NetworkForm.Focus()
-
-
+        Settings.Focus()
+        Settings.Show()
 
     End Sub
 End Class
