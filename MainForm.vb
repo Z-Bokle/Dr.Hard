@@ -3,7 +3,7 @@ Imports System.ComponentModel
 Imports System
 Imports System.IO
 Imports System.Collections
-
+Imports System.Windows
 
 
 
@@ -22,9 +22,9 @@ Public Class MainForm
     Public Check_AlwaysOnTop_Pub As Boolean = False
     Public Check_Border_Pub As Boolean = True
 
-
-
-
+    Public RelX As Integer
+    Public RelY As Integer
+    Public Mouse2Clicks As Boolean = False
 
 
 
@@ -196,4 +196,81 @@ Public Class MainForm
         Settings.Show()
 
     End Sub
+
+    Private Sub MainForm_MouseClick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
+
+        If Mouse2Clicks = False Then
+
+            Mouse2Clicks = True
+
+        Else
+
+            Mouse2Clicks = False
+
+
+        End If
+
+        RelX = MousePosition.X - Me.Location.X
+        'Relative distance in X line.
+
+
+
+        RelY = MousePosition.Y - Me.Location.Y
+        'Relative distance in Y line.
+
+
+
+        If e.Button = Forms.MouseButtons.Left And Mouse2Clicks = True Then
+
+
+
+            FormMovingTimer.Start()
+            Me.Opacity = 0.45
+
+        Else
+
+            FormMovingTimer.Stop()
+            Me.Opacity = 1
+
+
+        End If
+
+
+
+
+
+
+    End Sub
+
+
+    Private Sub MainForm_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
+
+
+
+
+
+    End Sub
+
+
+    Private Sub FormMovingTimer_Tick(sender As Object, e As EventArgs) Handles FormMovingTimer.Tick
+
+
+
+
+
+
+
+
+
+        Me.Location = New Point(MousePosition.X - RelX, MousePosition.Y - RelY)
+
+
+
+
+
+
+    End Sub
+
+
+
 End Class

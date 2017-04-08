@@ -22,24 +22,24 @@ Partial Class AboutForm
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.LogoBox = New System.Windows.Forms.PictureBox()
-        CType(Me.LogoBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AboutLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'LogoBox
+        'AboutLabel
         '
-        Me.LogoBox.Location = New System.Drawing.Point(12, 12)
-        Me.LogoBox.Name = "LogoBox"
-        Me.LogoBox.Size = New System.Drawing.Size(500, 180)
-        Me.LogoBox.TabIndex = 0
-        Me.LogoBox.TabStop = False
+        Me.AboutLabel.AutoSize = True
+        Me.AboutLabel.Location = New System.Drawing.Point(12, 9)
+        Me.AboutLabel.Name = "AboutLabel"
+        Me.AboutLabel.Size = New System.Drawing.Size(89, 28)
+        Me.AboutLabel.TabIndex = 0
+        Me.AboutLabel.Text = "About..."
         '
         'AboutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(523, 208)
-        Me.Controls.Add(Me.LogoBox)
+        Me.Controls.Add(Me.AboutLabel)
         Me.Font = New System.Drawing.Font("微软雅黑", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Margin = New System.Windows.Forms.Padding(7)
         Me.MaximizeBox = False
@@ -49,10 +49,10 @@ Partial Class AboutForm
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About"
-        CType(Me.LogoBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents LogoBox As PictureBox
+    Friend WithEvents AboutLabel As Label
 End Class
