@@ -38,19 +38,18 @@ Partial Class MainForm
         Me.TaskbarMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Menu_Open = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Exit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Menu_Settings_2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_About_2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.Menu_ComputerInfo = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Menu_Network = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Menu_Settings = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Websites = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Homepage = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_CheckForUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_About = New System.Windows.Forms.ToolStripMenuItem()
         Me.CPU_Used_Label = New System.Windows.Forms.Label()
         Me.Mem_Uesd_Label = New System.Windows.Forms.Label()
-        Me.FormMovingTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.Menu_Network = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_ComputerInfo = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Settings_2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Settings = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.CPUCounter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TaskbarMenu.SuspendLayout()
         Me.FormMenu.SuspendLayout()
@@ -148,30 +147,24 @@ Partial Class MainForm
         '
         Me.TaskbarMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Open, Me.Menu_Exit, Me.Menu_Settings_2, Me.Menu_About_2})
         Me.TaskbarMenu.Name = "TaskbarMenu"
-        Me.TaskbarMenu.Size = New System.Drawing.Size(123, 92)
+        Me.TaskbarMenu.Size = New System.Drawing.Size(153, 114)
         '
         'Menu_Open
         '
         Me.Menu_Open.Name = "Menu_Open"
-        Me.Menu_Open.Size = New System.Drawing.Size(122, 22)
+        Me.Menu_Open.Size = New System.Drawing.Size(152, 22)
         Me.Menu_Open.Text = "Open"
         '
         'Menu_Exit
         '
         Me.Menu_Exit.Name = "Menu_Exit"
-        Me.Menu_Exit.Size = New System.Drawing.Size(122, 22)
+        Me.Menu_Exit.Size = New System.Drawing.Size(152, 22)
         Me.Menu_Exit.Text = "Exit"
-        '
-        'Menu_Settings_2
-        '
-        Me.Menu_Settings_2.Name = "Menu_Settings_2"
-        Me.Menu_Settings_2.Size = New System.Drawing.Size(122, 22)
-        Me.Menu_Settings_2.Text = "Settings"
         '
         'Menu_About_2
         '
         Me.Menu_About_2.Name = "Menu_About_2"
-        Me.Menu_About_2.Size = New System.Drawing.Size(122, 22)
+        Me.Menu_About_2.Size = New System.Drawing.Size(152, 22)
         Me.Menu_About_2.Text = "About..."
         '
         'FormMenu
@@ -179,24 +172,6 @@ Partial Class MainForm
         Me.FormMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_ComputerInfo, Me.Menu_Network, Me.Menu_Settings, Me.Menu_Websites, Me.Menu_About})
         Me.FormMenu.Name = "FormMenu"
         Me.FormMenu.Size = New System.Drawing.Size(162, 114)
-        '
-        'Menu_ComputerInfo
-        '
-        Me.Menu_ComputerInfo.Name = "Menu_ComputerInfo"
-        Me.Menu_ComputerInfo.Size = New System.Drawing.Size(161, 22)
-        Me.Menu_ComputerInfo.Text = "Computer Info"
-        '
-        'Menu_Network
-        '
-        Me.Menu_Network.Name = "Menu_Network"
-        Me.Menu_Network.Size = New System.Drawing.Size(161, 22)
-        Me.Menu_Network.Text = "Network"
-        '
-        'Menu_Settings
-        '
-        Me.Menu_Settings.Name = "Menu_Settings"
-        Me.Menu_Settings.Size = New System.Drawing.Size(161, 22)
-        Me.Menu_Settings.Text = "Settings"
         '
         'Menu_Websites
         '
@@ -243,9 +218,29 @@ Partial Class MainForm
         Me.Mem_Uesd_Label.TabIndex = 11
         Me.Mem_Uesd_Label.Text = "Mem Used"
         '
-        'FormMovingTimer
+        'Menu_Network
         '
-        Me.FormMovingTimer.Interval = 10
+        Me.Menu_Network.Name = "Menu_Network"
+        Me.Menu_Network.Size = New System.Drawing.Size(161, 22)
+        Me.Menu_Network.Text = "Network"
+        '
+        'Menu_ComputerInfo
+        '
+        Me.Menu_ComputerInfo.Name = "Menu_ComputerInfo"
+        Me.Menu_ComputerInfo.Size = New System.Drawing.Size(161, 22)
+        Me.Menu_ComputerInfo.Text = "Computer Info"
+        '
+        'Menu_Settings_2
+        '
+        Me.Menu_Settings_2.Name = "Menu_Settings_2"
+        Me.Menu_Settings_2.Size = New System.Drawing.Size(152, 22)
+        Me.Menu_Settings_2.Text = "Settings"
+        '
+        'Menu_Settings
+        '
+        Me.Menu_Settings.Name = "Menu_Settings"
+        Me.Menu_Settings.Size = New System.Drawing.Size(161, 22)
+        Me.Menu_Settings.Text = "Settings"
         '
         'MainForm
         '
@@ -305,5 +300,4 @@ Partial Class MainForm
     Friend WithEvents Menu_ComputerInfo As ToolStripMenuItem
     Friend WithEvents Menu_Settings_2 As ToolStripMenuItem
     Friend WithEvents Menu_Settings As ToolStripMenuItem
-    Friend WithEvents FormMovingTimer As Timer
 End Class
