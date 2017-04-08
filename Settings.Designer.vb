@@ -22,27 +22,28 @@ Partial Class Settings
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.SettingGroup = New System.Windows.Forms.GroupBox()
+        Me.SettingsGroup = New System.Windows.Forms.GroupBox()
         Me.Check_Border = New System.Windows.Forms.CheckBox()
         Me.Check_AlwaysOnTop = New System.Windows.Forms.CheckBox()
         Me.Label = New System.Windows.Forms.Label()
         Me.ReloadTimeSetter = New System.Windows.Forms.NumericUpDown()
-        Me.SettingGroup.SuspendLayout()
+        Me.ThemesGroup = New System.Windows.Forms.GroupBox()
+        Me.SettingsGroup.SuspendLayout()
         CType(Me.ReloadTimeSetter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'SettingGroup
+        'SettingsGroup
         '
-        Me.SettingGroup.Controls.Add(Me.Check_Border)
-        Me.SettingGroup.Controls.Add(Me.Check_AlwaysOnTop)
-        Me.SettingGroup.Controls.Add(Me.Label)
-        Me.SettingGroup.Controls.Add(Me.ReloadTimeSetter)
-        Me.SettingGroup.Location = New System.Drawing.Point(10, 12)
-        Me.SettingGroup.Name = "SettingGroup"
-        Me.SettingGroup.Size = New System.Drawing.Size(312, 125)
-        Me.SettingGroup.TabIndex = 7
-        Me.SettingGroup.TabStop = False
-        Me.SettingGroup.Text = "Settings"
+        Me.SettingsGroup.Controls.Add(Me.Check_Border)
+        Me.SettingsGroup.Controls.Add(Me.Check_AlwaysOnTop)
+        Me.SettingsGroup.Controls.Add(Me.Label)
+        Me.SettingsGroup.Controls.Add(Me.ReloadTimeSetter)
+        Me.SettingsGroup.Location = New System.Drawing.Point(10, 12)
+        Me.SettingsGroup.Name = "SettingsGroup"
+        Me.SettingsGroup.Size = New System.Drawing.Size(312, 125)
+        Me.SettingsGroup.TabIndex = 7
+        Me.SettingsGroup.TabStop = False
+        Me.SettingsGroup.Text = "Settings"
         '
         'Check_Border
         '
@@ -77,22 +78,32 @@ Partial Class Settings
         '
         'ReloadTimeSetter
         '
-        Me.ReloadTimeSetter.DecimalPlaces = 2
-        Me.ReloadTimeSetter.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.ReloadTimeSetter.DecimalPlaces = 1
+        Me.ReloadTimeSetter.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.ReloadTimeSetter.Location = New System.Drawing.Point(183, 44)
-        Me.ReloadTimeSetter.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.ReloadTimeSetter.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.ReloadTimeSetter.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.ReloadTimeSetter.Minimum = New Decimal(New Integer() {5, 0, 0, 65536})
         Me.ReloadTimeSetter.Name = "ReloadTimeSetter"
         Me.ReloadTimeSetter.Size = New System.Drawing.Size(44, 23)
         Me.ReloadTimeSetter.TabIndex = 0
-        Me.ReloadTimeSetter.Value = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.ReloadTimeSetter.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'ThemesGroup
+        '
+        Me.ThemesGroup.Location = New System.Drawing.Point(12, 143)
+        Me.ThemesGroup.Name = "ThemesGroup"
+        Me.ThemesGroup.Size = New System.Drawing.Size(310, 158)
+        Me.ThemesGroup.TabIndex = 8
+        Me.ThemesGroup.TabStop = False
+        Me.ThemesGroup.Text = "Themes"
         '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(332, 154)
-        Me.Controls.Add(Me.SettingGroup)
+        Me.ClientSize = New System.Drawing.Size(332, 313)
+        Me.Controls.Add(Me.ThemesGroup)
+        Me.Controls.Add(Me.SettingsGroup)
         Me.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -103,16 +114,17 @@ Partial Class Settings
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Settings"
-        Me.SettingGroup.ResumeLayout(False)
-        Me.SettingGroup.PerformLayout()
+        Me.SettingsGroup.ResumeLayout(False)
+        Me.SettingsGroup.PerformLayout()
         CType(Me.ReloadTimeSetter, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents SettingGroup As GroupBox
+    Friend WithEvents SettingsGroup As GroupBox
     Friend WithEvents Check_AlwaysOnTop As CheckBox
     Friend WithEvents Label As Label
     Friend WithEvents ReloadTimeSetter As NumericUpDown
     Friend WithEvents Check_Border As CheckBox
+    Friend WithEvents ThemesGroup As GroupBox
 End Class

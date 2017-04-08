@@ -2,6 +2,23 @@
 
 
 
+*This version is planning or producing.
+
+
+
+## 1.0.8*
+
+- Network connection speed is added in Network.
+
+## 1.0.7*
+
+- Themes is added.
+
+## 1.0.6
+
+- Now you can move your Dr.Hard in a new way.
+- About box is added some information.
+
 ## 1.0.6 - pre 2
 
 - A new form called "Settings" is added.
@@ -11,7 +28,7 @@
 ## 1.0.6 - pre 1 
 
 - 2 bugs fixed.
-- Log function is added, but it is still not complete.
+- Log function is added, but it is still not completed.
 
 ## 1.0.5
 
